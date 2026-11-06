@@ -1,0 +1,20 @@
+[options]
+focus_follows_mouse = true
+mouse_follows_focus = true
+preset_column_widths = [0.33, 0.5, 0.66]
+
+[swipe]
+sensitivity = 0.15
+deceleration = 6.0
+continuous = true
+
+[swipe.gesture]
+fingers_count = 3
+vertical = true
+
+[bindings]
+window_focus_west = "cmd - h"
+window_focus_east = "cmd - l"
+window_resize = "alt - r"
+window_center = "alt - c"
+quit = "ctrl + alt - q"
