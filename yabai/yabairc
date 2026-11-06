@@ -1,0 +1,35 @@
+#!/usr/bin/env sh
+
+# --- scripting addition (only if you disabled SIP partially) ---
+# yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+# sudo yabai --load-sa
+
+# --- layout ---
+yabai -m config layout                bsp
+yabai -m config window_placement      second_child
+yabai -m config split_ratio           0.50
+yabai -m config auto_balance          off
+
+# --- gaps / bar space (SketchyBar height 32) ---
+yabai -m config external_bar          main:32:0
+yabai -m config top_padding           10
+yabai -m config bottom_padding        10
+yabai -m config left_padding          10
+yabai -m config right_padding         10
+yabai -m config window_gap            10
+
+# --- mouse ---
+yabai -m config mouse_follows_focus   off
+yabai -m config focus_follows_mouse   off
+yabai -m config mouse_modifier        alt
+yabai -m config mouse_action1         move
+yabai -m config mouse_action2         resize
+
+# --- rules: apps that should float ---
+yabai -m rule --add app="^(System Settings|Calculator|Archive Utility|Finder|Activity Monitor|App Store|Preview)$" manage=off
+yabai -m rule --add title="^(Settings|Preferences|General|Opening|Copy|Move)$" manage=off
+
+# --- window borders (JankyBorders), Tokyo Night blue / dark grey ---
+borders active_color=0xff7aa2f7 inactive_color=0xff414868 width=4.0 style=round &
+
+echo "yabai configuration loaded."
